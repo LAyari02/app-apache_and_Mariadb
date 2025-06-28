@@ -18,3 +18,15 @@ services:
       - "3306:3306"
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  db2:
+    image: mariadb:11
+    environment:
+      MYSQL_ROOT_PASSWORD: example2
+      MYSQL_DATABASE: testdb2
+      MYSQL_USER: user2
+      MYSQL_PASSWORD: password2
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/init2.sql:/docker-entrypoint-initdb.d/init2.sql
